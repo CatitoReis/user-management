@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "nome": "João",
+    "sobreNome": "Silva",
+    "email": "joao.silva@example.com",
+    "telefone": "+5511999999999",
+    "perfilAcess": {"role": "admin", "permissions": ["read", "write", "delete"]},
+    "contatoPref": 1,
+    "idioma": "pt-BR",
+    "status": "ativo",
+    "dataCriacao": "2023-01-15T10:00:00Z",
+    "ultimoAcesso": "2024-05-01T14:30:00Z"
+  },
+  {
+    "id": 2,
+    "nome": "Maria",
+    "sobreNome": "Fernandes",
+    "email": "maria.fernandes@example.com",
+    "telefone": "+5511988888888",
+    "perfilAcess": {"role": "user", "permissions": ["read", "write"]},
+    "contatoPref": 2,
+    "idioma": "pt-BR",
+    "status": "ativo",
+    "dataCriacao": "2022-11-10T09:15:00Z",
+    "ultimoAcesso": "2024-05-20T11:00:00Z"
+  },
+  {
+    "id": 3,
+    "nome": "Carlos",
+    "sobreNome": "Pereira",
+    "email": "carlos.pereira@example.com",
+    "telefone": "+5511977777777",
+    "perfilAcess": {"role": "moderator", "permissions": ["read", "write", "edit"]},
+    "contatoPref": 1,
+    "idioma": "pt-BR",
+    "status": "bloqueado",
+    "dataCriacao": "2021-06-25T08:30:00Z",
+    "ultimoAcesso": "2023-12-15T16:45:00Z"
+  },
+  {
+    "id": 4,
+    "nome": "Ana",
+    "sobreNome": "Costa",
+    "email": "ana.costa@example.com",
+    "telefone": "+5511966666666",
+    "perfilAcess": {"role": "admin", "permissions": ["read", "write", "delete", "edit"]},
+    "contatoPref": 1,
+    "idioma": "pt-BR",
+    "status": "ativo",
+    "dataCriacao": "2020-03-22T12:00:00Z",
+    "ultimoAcesso": "2024-04-10T09:25:00Z"
+  },
+  {
+    "id": 5,
+    "nome": "Paulo",
+    "sobreNome": "Oliveira",
+    "email": "paulo.oliveira@example.com",
+    "telefone": "+5511955555555",
+    "perfilAcess": {"role": "user", "permissions": ["read"]},
+    "contatoPref": 2,
+    "idioma": "pt-BR",
+    "status": "pendente",
+    "dataCriacao": "2023-08-01T14:45:00Z",
+    "ultimoAcesso": "2024-05-15T10:30:00Z"
+  }
+]

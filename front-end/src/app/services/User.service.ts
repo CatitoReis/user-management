@@ -5,11 +5,18 @@ import { User } from "../models/User";
 
 @Injectable({providedIn:'root'})
 export class UserService{
-  private jsonUrl = 'assets/usuarios.json'
+  private jsonUrl = 'http://localhost:3000'
 
   constructor(private http: HttpClient){
   }
+
   getUsers(): Observable <User[]>{
-    return this.http.get<User[]>(this.jsonUrl)
+    const url = `${this.jsonUrl}/users`
+    return this.http.get<User[]>(url)
+  }
+
+  saveUsers(object: User): Observable <User>{
+    const url = `${this.jsonUrl}/users`
+    return this.http.post<User>(url, object)
   }
 }

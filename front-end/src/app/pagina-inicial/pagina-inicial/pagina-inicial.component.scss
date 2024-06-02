@@ -1,22 +1,19 @@
-.hexagonal-input {
-  width: 11.2%;
-  padding: 10px;
+.nomesForm{
+ display: inline-grid;
+ margin-top: 2%;
+}
+
+.espacoHorizontalInput{
+  margin-left: 30%;
+}
+
+.espacoInput{
+  margin-top: 4%;
+}
+
+.tamanhoInput{
+  width: 195%;
   border: 1px solid #ccc;
   border-radius: 11px;
   outline: none;
-
-  &:focus {
-    border-color: #007bff;
-  }
-}
-
-.hexagonal-input::placeholder {
-  color: #8b8b8b;
-}
-
-.search{
-  color: #a1a0a0;
-  margin-left: 10.9%;
-  display: flex;
-  margin-top: -1.3%
 }

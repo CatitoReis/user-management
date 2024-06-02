@@ -4,7 +4,7 @@ export interface User {
   sobreNome: string;
   email: string;
   telefone: string;
-  perfilAcess: any;
+  perfilAcess: string;
   contatoPref: number;
   idioma: string;
   status: string;

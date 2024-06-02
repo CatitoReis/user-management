@@ -16,6 +16,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './services/User.service';
 import { DialogModule } from 'primeng/dialog';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,9 @@ import { DialogModule } from 'primeng/dialog';
     MatSelectModule,
     HttpClientModule,
     DialogModule,
+    RadioButtonModule,
+    MultiSelectModule,
+    ReactiveFormsModule,
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

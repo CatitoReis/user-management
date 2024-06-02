@@ -1,6 +1,7 @@
+<div>
 <h3 style="font-weight: bold;">Usuários</h3>
 
-<div>
+<div class="tableSize">
   <div class="card">
     <p-table
       #dt1
@@ -86,21 +87,21 @@
     <!--Perfil De Acesso-->
     <div class="nomesForm card flex justify-content-center">
       <label htmlFor="perfilAcesso">Perfil de Acesso</label>
-      <p-multiSelect formControlName="perfilAcesso" [options]="opcoesPerfilAcess" placeholder="Selecione os perfis de Acesso" optionLabel="label" display="chip" [showClear]="true" [virtualScroll]="true" [virtualScrollItemSize]="30"></p-multiSelect>
+      <p-multiSelect formControlName="perfilAcesso" class="espacoInput" [options]="opcoesPerfilAcess" placeholder="Selecione os perfis de Acesso" optionLabel="label" display="chip" [showClear]="true" [virtualScroll]="true" [virtualScrollItemSize]="30"></p-multiSelect>
     </div>
 
     <!--Idioma e Contato-->
     <div class="espacoInput">
       <div class="nomesForm">
         <label htmlFor="idioma">Idioma</label>
-        <p-dropdown formControlName="idioma" [options]="opcoesIdioma" optionLabel="label" [showClear]="true" placeholder="Selecione um Idioma"></p-dropdown>
+        <p-dropdown formControlName="idioma" class="espacoInput" [options]="opcoesIdioma" optionLabel="label" [showClear]="true" placeholder="Selecione um Idioma"></p-dropdown>
       </div>
 
       <div class="nomesForm" style="margin-left: 26.5%;">
         <label htmlFor="contato">Contato Preferencial</label>
         <div class="flex flex-wrap gap-3 espacoInput" style="display: ruby;">
           <div class="flex align-items-center">
-            <p-radioButton formControlName="contato" name="contato" value="email" inputId="option1"></p-radioButton>
+            <p-radioButton formControlName="contato" class="espacoInput" name="contato" value="email" inputId="option1"></p-radioButton>
             <label for="option1" class="ml-2">E-mail</label>
           </div>
 
@@ -122,3 +123,4 @@
     <p-button (click)="onSubmit()" label="Enviar Convite"></p-button>
   </ng-template>
 </p-dialog>
+</div>

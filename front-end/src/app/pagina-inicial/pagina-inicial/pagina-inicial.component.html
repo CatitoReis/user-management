@@ -1,126 +1,141 @@
 <div>
-<h3 style="font-weight: bold;">Usuários</h3>
+  <h3 style="font-weight: bold;">Usuários</h3>
 
-<div class="tableSize">
-  <div class="card">
-    <p-table
-      #dt1
-      [value]="usuarios"
-      dataKey="id"
-      [paginator]="true"
-      [rows]="10"
-      [showCurrentPageReport]="true"
-      [tableStyle]="{ 'min-width': '50rem' }"
-      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-      (onPage)="pageChange($event)"
-      [rowsPerPageOptions]="[10, 25, 50]"
-      [globalFilterFields]="['nome', 'email', 'status', 'dataCriacao', 'ultimoAcesso']"
-    >
-      <ng-template pTemplate="caption">
-        <div class="flex">
-          <span class="p-input-icon-right ml-auto">
-            <i class="pi pi-search"></i>
-            <input pInputText type="text" (input)="dt1.filterGlobal($any($event.target).value, 'contains')" placeholder="Pesquise pelo Nome ou E-mail" />
-          </span>
-          <p-dropdown
-               placeholder="Filtrar"
-              [options]="opcoesStatus"
-              (onChange)="dt1.filter($event.value, 'status', 'equals')">
-          </p-dropdown>
-          <p-button (click)="showDialog()" icon="pi pi-external-link" label="Show"></p-button>
-        </div>
-      </ng-template>
-      <ng-template pTemplate="header">
-        <tr>
-          <th style="width:25%">Usuários</th>
-          <th style="width:25%">Status</th>
-          <th style="width:25%">Data de Criação</th>
-          <th style="width:25%">Último Acesso</th>
-        </tr>
-      </ng-template>
-      <ng-template pTemplate="body" let-usuario>
-        <tr>
-          <td>{{ usuario.nome }}
-            <div>
-              {{ usuario.email }}
-            </div>
-          </td>
-          <td>{{ usuario.status }}</td>
-          <td>{{ usuario.dataCriacao }}</td>
-          <td>{{ usuario.ultimoAcesso }}</td>
-        </tr>
-      </ng-template>
-    </p-table>
+<!-- BARRA DE PESQUISA, FILTRAR e Botao de Criar Usuário -->
+
+  <div class="flex mb-4" style="margin-left: 19.9%;">
+    <span class="p-input-icon-right ml-auto">
+      <i class="pi pi-search" style="margin-right: -29%;"></i>
+      <input pInputText type="text" class="tamanhoInput" (input)="dt1.filterGlobal($any($event.target).value, 'contains')" placeholder="Pesquise pelo Nome ou E-mail" />
+    </span>
+
+   <p-dropdown
+        class="dropFilter"
+        placeholder="Filtrar"
+        [options]="opcoesStatus"
+        (onChange)="dt1.filter($event.value, 'status', 'equals')">
+   </p-dropdown>
+
+    <p-button (click)="showDialog()" label="Novo Usuário"></p-button>
   </div>
-</div>
 
-<p-dialog header="Header" [(visible)]="visible" [style]="{ width: '50vw' }">
-  <ng-template pTemplate="header">
-    <span class="text-xl font-bold">Adicionar Usuário</span>
-  </ng-template>
+<!-- TABELA -->
 
-  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-    <!--CAMPO NOME E SOBRENOME-->
-    <div>
-      <div class="nomesForm flex flex-column gap-2">
-        <label htmlFor="nome">Nome</label>
-        <input class="espacoInput tamanhoInput" pInputText id="nome" formControlName="nome" aria-describedby="input nome"/>
-      </div>
-      <div class="nomesForm flex flex-column gap-2 espacoHorizontalInput">
-        <label htmlFor="sobrenome">Sobrenome</label>
-        <input class="espacoInput tamanhoInput" pInputText id="sobrenome" formControlName="sobrenome" aria-describedby="input sobrenome"/>
-      </div>
+  <div class="tableSize">
+  <div class="card" style="margin-top: 1%;">
+      <p-table
+        #dt1
+        [value]="usuarios"
+        dataKey="id"
+        [paginator]="true"
+        [rows]="10"
+        [showCurrentPageReport]="true"
+        [tableStyle]="{ 'min-width': '50rem' }"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+        (onPage)="pageChange($event)"
+        [rowsPerPageOptions]="[10, 25, 50]"
+        [globalFilterFields]="['nome', 'email', 'status', 'dataCriacao', 'ultimoAcesso']"
+      >
+        <ng-template pTemplate="header">
+          <tr>
+            <th style="width:25%">Usuários</th>
+            <th style="width:25%">Status</th>
+            <th style="width:25%">Data de Criação</th>
+            <th style="width:25%">Último Acesso</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-usuario>
+          <tr>
+            <td>{{ usuario.nome }}
+              <div>
+                {{ usuario.email }}
+              </div>
+            </td>
+            <td>
+              <div [ngClass]="{'status-ativo': usuario.status === 'ativo', 'status-pendente': usuario.status === 'pendente', 'status-bloqueado': usuario.status === 'bloqueado'}" class="status-background">
+                {{ usuario.status }}
+              </div>
+            </td>
+            <td>{{ formatDataCriacao(usuario.dataCriacao) }}</td>
+            <td>{{ formatUltimoAcesso(usuario.ultimoAcesso) }}</td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="paginatorLeftTemplate">
+          <span>Itens por página:</span>
+        </ng-template>
+      </p-table>
     </div>
+  </div>
 
-    <!--Telefone E E-MAIL-->
-    <div>
-      <div class="nomesForm flex flex-column gap-2">
-        <label htmlFor="telefone">Telefone</label>
-        <input class="espacoInput tamanhoInput" pInputText id="telefone" formControlName="telefone" aria-describedby="input telefone"/>
-      </div>
-      <div class="nomesForm flex flex-column gap-2 espacoHorizontalInput">
-        <label htmlFor="email">E-mail Corporativo</label>
-        <input class="espacoInput tamanhoInput" pInputText id="email" formControlName="email" aria-describedby="input email"/>
-      </div>
-    </div>
+  <p-dialog header="Header" [(visible)]="visible" [style]="{ width: '50vw' }">
+    <ng-template pTemplate="header">
+      <span class="text-xl font-bold">Adicionar Usuário</span>
+    </ng-template>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
 
-    <!--Perfil De Acesso-->
-    <div class="nomesForm card flex justify-content-center">
-      <label htmlFor="perfilAcesso">Perfil de Acesso</label>
-      <p-multiSelect formControlName="perfilAcesso" class="espacoInput" [options]="opcoesPerfilAcess" placeholder="Selecione os perfis de Acesso" optionLabel="label" display="chip" [showClear]="true" [virtualScroll]="true" [virtualScrollItemSize]="30"></p-multiSelect>
-    </div>
-
-    <!--Idioma e Contato-->
-    <div class="espacoInput">
-      <div class="nomesForm">
-        <label htmlFor="idioma">Idioma</label>
-        <p-dropdown formControlName="idioma" class="espacoInput" [options]="opcoesIdioma" optionLabel="label" [showClear]="true" placeholder="Selecione um Idioma"></p-dropdown>
+      <!--CAMPO NOME E SOBRENOME-->
+      <div>
+        <div class="nomesForm flex flex-column gap-2">
+          <label htmlFor="nome">Nome</label>
+          <input class="espacoInput tamanhoInput" pInputText id="nome" formControlName="nome" aria-describedby="input nome" />
+        </div>
+        <div class="nomesForm flex flex-column gap-2 espacoHorizontalInput">
+          <label htmlFor="sobrenome">Sobrenome</label>
+          <input class="espacoInput tamanhoInput" pInputText id="sobrenome" formControlName="sobrenome" aria-describedby="input sobrenome" />
+        </div>
       </div>
 
-      <div class="nomesForm" style="margin-left: 26.5%;">
-        <label htmlFor="contato">Contato Preferencial</label>
-        <div class="flex flex-wrap gap-3 espacoInput" style="display: ruby;">
-          <div class="flex align-items-center">
-            <p-radioButton formControlName="contato" class="espacoInput" name="contato" value="email" inputId="option1"></p-radioButton>
-            <label for="option1" class="ml-2">E-mail</label>
-          </div>
+      <!--Telefone E E-MAIL-->
+      <div>
+        <div class="nomesForm flex flex-column gap-2">
+          <label htmlFor="telefone">Telefone</label>
+          <input class="espacoInput tamanhoInput" pInputText id="telefone" formControlName="telefone" aria-describedby="input telefone" />
+        </div>
+        <div class="nomesForm flex flex-column gap-2 espacoHorizontalInput">
+          <label htmlFor="email">E-mail Corporativo</label>
+          <input class="espacoInput tamanhoInput" pInputText id="email" formControlName="email" aria-describedby="input email" />
+        </div>
+      </div>
 
-          <div class="flex align-items-center">
-            <p-radioButton formControlName="contato" name="contato" value="Telefone" inputId="option2"></p-radioButton>
-            <label for="option2" class="ml-2">Telefone</label>
-          </div>
+      <!--Perfil De Acesso-->
+      <div class="nomesForm card flex justify-content-center">
+        <label htmlFor="perfilAcesso">Perfil de Acesso</label>
+        <p-multiSelect
+               formControlName="perfilAcesso" class="espacoInput" [options]="opcoesPerfilAcess" placeholder="Selecione os perfis de Acesso" optionLabel="label" display="chip" [showClear]="true" [virtualScroll]="true" [virtualScrollItemSize]="30"></p-multiSelect>
+      </div>
 
-          <div class="flex align-items-center">
-            <p-radioButton formControlName="contato" name="contato" value="todos" inputId="option3"></p-radioButton>
-            <label for="option3" class="ml-2">Todos</label>
+      <!--Idioma e Contato-->
+      <div>
+        <div class="nomesForm">
+          <label htmlFor="idioma">Idioma</label>
+          <p-dropdown
+                formControlName="idioma" class="espacoInput" [options]="opcoesIdioma" optionLabel="label" [showClear]="true" placeholder="Selecione um Idioma"></p-dropdown>
+        </div>
+
+        <div class="nomesForm" style="margin-left: 26.5%;">
+          <label htmlFor="contato">Contato Preferencial</label>
+          <div class="flex flex-wrap gap-3 espacoInput" style="display: ruby;">
+            <div class="flex align-items-center">
+              <p-radioButton formControlName="contato" class="espacoInput" name="contato" value="email" inputId="option1"></p-radioButton>
+              <label for="option1" class="ml-2">E-mail</label>
+            </div>
+
+            <div class="flex align-items-center">
+              <p-radioButton formControlName="contato" name="contato" value="Telefone" inputId="option2"></p-radioButton>
+              <label for="option2" class="ml-2">Telefone</label>
+            </div>
+
+            <div class="flex align-items-center">
+              <p-radioButton formControlName="contato" name="contato" value="todos" inputId="option3"></p-radioButton>
+              <label for="option3" class="ml-2">Todos</label>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </form>
+    </form>
 
-  <ng-template pTemplate="footer">
-    <p-button (click)="onSubmit()" label="Enviar Convite"></p-button>
-  </ng-template>
-</p-dialog>
+    <ng-template pTemplate="footer">
+      <p-button (click)="onSubmit()" label="Enviar Convite"></p-button>
+    </ng-template>
+  </p-dialog>
 </div>

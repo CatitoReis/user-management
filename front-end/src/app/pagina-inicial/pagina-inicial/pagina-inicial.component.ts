@@ -4,12 +4,14 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Table } from 'primeng/table';
 import { FilterMetadata } from 'primeng/api';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { EMPTY } from 'rxjs';
+import { DatePipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-pagina-inicial',
   templateUrl: './pagina-inicial.component.html',
-  styleUrls: ['./pagina-inicial.component.scss']
+  styleUrls: ['./pagina-inicial.component.scss'],
+  providers: [DatePipe]
 })
 export class PaginaInicialComponent implements OnInit {
   usuarios!: User[];
@@ -23,7 +25,7 @@ export class PaginaInicialComponent implements OnInit {
 
   @ViewChild('dt') dt: Table | undefined;
 
-  constructor(private userService: UserService, private fb: FormBuilder) {
+  constructor(private userService: UserService, private fb: FormBuilder, private datePipe: DatePipe) {
     this.opcoesStatus = [
       { label: 'Todos', value: null },
       { label: 'Ativo', value: 'ativo' },
@@ -130,6 +132,17 @@ this.userService.saveUsers(user).subscribe(response => {
   this.buscarUsuarios();
   this.visible = false
 })}
+
+formatDataCriacao(date: string): string | null {
+  return this.datePipe.transform(date, 'dd/MM/yyyy');
+}
+
+formatUltimoAcesso(date: string): string | null {
+  const formattedDate = this.datePipe.transform(date, 'dd/MM/yyyy') ?? '';
+  const formattedTime = this.datePipe.transform(date, 'HH:mm') ?? '';
+  return `${formattedDate} às ${formattedTime}h`;
+}
+
 
 showDialog() {
   this.visible = true;

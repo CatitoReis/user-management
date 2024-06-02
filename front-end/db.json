@@ -210,6 +210,27 @@
       "status": "ativo",
       "dataCriacao": "2024-06-02T06:46:34.836Z",
       "ultimoAcesso": "2024-06-02T06:46:34.836Z"
+    },
+    {
+      "id": "3229",
+      "nome": "Du",
+      "sobrenome": "Reis",
+      "telefone": "615616666",
+      "email": "du@hotmail",
+      "perfilAcesso": [
+        {
+          "label": "Supervisor",
+          "value": "supervisor"
+        }
+      ],
+      "idioma": {
+        "label": "Todos",
+        "value": null
+      },
+      "contato": "todos",
+      "status": "ativo",
+      "dataCriacao": "2024-06-02T07:36:18.356Z",
+      "ultimoAcesso": "2024-06-02T07:36:18.356Z"
     }
   ]
 }

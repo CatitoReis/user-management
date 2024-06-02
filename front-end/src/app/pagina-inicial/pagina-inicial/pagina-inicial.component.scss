@@ -1,18 +1,23 @@
-.nomesForm{
- display: inline-grid;
- margin-top: 2%;
+.nomesForm {
+  display: inline-grid;
+  margin-top: 2%;
 }
 
-.espacoHorizontalInput{
+.espacoHorizontalInput {
   margin-left: 30%;
 }
 
-.espacoInput{
+.espacoInput {
   margin-top: 4%;
 }
 
-.tamanhoInput{
-  width: 195%;
+.barraPesquisa{
+  margin-left: -1%;
+
+}
+
+.tamanhoInput {
+  width: 132%;
   border: 1px solid #ccc;
   border-radius: 11px;
   outline: none;
@@ -25,4 +30,29 @@
   background-color: #949494;
   zoom: 85%;
   padding: 0%;
+}
+
+.dropFilter{
+  margin-left: 6%;
+  margin-right: 36.5%;
+}
+.status-background {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.status-ativo {
+  background-color: rgba(0, 128, 0, 0.4); /* Verde com 40% de opacidade */
+  color: rgb(30, 97, 3);
+}
+
+.status-pendente {
+  background-color: rgba(241, 219, 21, 0.4); /* Amarelo com 40% de opacidade */
+  color: rgb(177, 180, 12);
+}
+
+.status-bloqueado {
+  background-color: rgba(255, 0, 0, 0.4); /* Vermelho com 40% de opacidade */
+  color: rgb(206, 40, 40);
 }

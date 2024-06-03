@@ -30,7 +30,7 @@ export class PaginaInicialComponent implements OnInit {
 
   constructor(private userService: UserService, private fb: FormBuilder, private datePipe: DatePipe) {
     this.opcoesStatus = [
-      { label: 'Todos', value: null },
+      { label: 'Filtrar', value: null },
       { label: 'Ativo', value: 'ativo' },
       { label: 'Pendente', value: 'pendente' },
       { label: 'Bloqueado', value: 'bloqueado' }

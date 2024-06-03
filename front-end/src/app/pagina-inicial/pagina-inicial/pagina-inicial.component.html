@@ -13,7 +13,8 @@
         class="dropFilter"
         placeholder="Filtrar"
         [options]="opcoesStatus"
-        (onChange)="dt1.filter($event.value, 'status', 'equals')">
+        (onChange)="dt1.filter($event.value, 'status', 'equals')"
+        defaultLabel="Filtrar">
    </p-dropdown>
 
     <p-button (click)="showDialog()" label="Novo Usuário"></p-button>
@@ -116,15 +117,15 @@
       </div>
 
       <!--Perfil De Acesso-->
-      <div class="nomesForm card flex justify-content-center">
-        <label htmlFor="perfilAcesso">Perfil de Acesso</label>
-        <p-multiSelect
-          formControlName="perfilAcesso" class="espacoInput" [options]="opcoesPerfilAcess" placeholder="Selecione os perfis de Acesso" optionLabel="label" display="chip" [showClear]="true" [virtualScroll]="true" [virtualScrollItemSize]="30" appendTo="body">
-        </p-multiSelect>
-        <div *ngIf="submitted && userForm.get('perfilAcesso')?.errors?.['required']">
-          <small class="text-danger">Perfil de Acesso é obrigatório.</small>
-        </div>
+    <div class="nomesForm card flex flex-column">
+      <label htmlFor="perfilAcesso">Perfil de Acesso</label>
+      <p-multiSelect
+        formControlName="perfilAcesso" class="espacoInput" [options]="opcoesPerfilAcess" placeholder="Selecione os perfis de Acesso" optionLabel="label" display="chip" [showClear]="true" [virtualScroll]="true" [virtualScrollItemSize]="30">
+      </p-multiSelect>
+      <div *ngIf="submitted && userForm.get('perfilAcesso')?.errors?.['required']">
+        <small class="text-danger">Perfil de Acesso é obrigatório.</small>
       </div>
+    </div>
 
       <!--Idioma e Contato-->
 

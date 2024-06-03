@@ -11,3 +11,7 @@ export interface User {
   dataCriacao: Date;
   ultimoAcesso: Date;
 }
+export interface BandeiraTelefone{
+  name: string;
+  code: string;
+}

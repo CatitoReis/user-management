@@ -21,7 +21,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import { InputMaskModule } from 'primeng/inputmask';
-
+import { ListboxModule } from 'primeng/listbox';
 
 @NgModule({
   declarations: [
@@ -46,6 +46,7 @@ import { InputMaskModule } from 'primeng/inputmask';
     MultiSelectModule,
     ReactiveFormsModule,
     InputMaskModule,
+    ListboxModule,
 
   ],
   providers: [UserService, DatePipe],

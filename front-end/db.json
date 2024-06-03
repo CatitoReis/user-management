@@ -4,7 +4,7 @@
       "id": "1",
       "nome": "João",
       "sobreNome": "Silva",
-      "email": "joao.silva@example.com",
+      "email": "joao.silva@gmail.com",
       "telefone": "+5511999999999",
       "perfilAcess": "supervisor",
       "contatoPref": 1,
@@ -17,7 +17,7 @@
       "id": "2",
       "nome": "Maria",
       "sobreNome": "Fernandes",
-      "email": "maria.fernandes@example.com",
+      "email": "maria.fernandes@gmail.com",
       "telefone": "+5511988888888",
       "perfilAcess": "analista",
       "contatoPref": 2,
@@ -30,7 +30,7 @@
       "id": "3",
       "nome": "Carlos",
       "sobreNome": "Pereira",
-      "email": "carlos.pereira@example.com",
+      "email": "carlos.pereira@gmail.com",
       "telefone": "+5511977777777",
       "perfilAcess": "analista",
       "contatoPref": 1,
@@ -43,7 +43,7 @@
       "id": "4",
       "nome": "Ana",
       "sobreNome": "Costa",
-      "email": "ana.costa@example.com",
+      "email": "ana.costa@gmail.com",
       "telefone": "+5511966666666",
       "perfilAcess": "supervisor",
       "contatoPref": 1,
@@ -56,7 +56,7 @@
       "id": "5",
       "nome": "Paulo",
       "sobreNome": "Oliveira",
-      "email": "paulo.oliveira@example.com",
+      "email": "paulo.oliveira@gmail.com",
       "telefone": "+5511955555555",
       "perfilAcess": "analista",
       "contatoPref": 2,
@@ -64,6 +64,56 @@
       "status": "pendente",
       "dataCriacao": "2023-08-01T14:45:00Z",
       "ultimoAcesso": "2024-05-15T10:30:00Z"
+    },
+    {
+      "id": "7da5",
+      "nome": "caio",
+      "sobrenome": "reis",
+      "telefone": "4564asd",
+      "email": "dasdad@asasdas",
+      "perfilAcesso": [
+        {
+          "label": "Supervisor",
+          "value": "supervisor"
+        },
+        {
+          "label": "Analista",
+          "value": "analista"
+        }
+      ],
+      "idioma": {
+        "label": "Todos",
+        "value": null
+      },
+      "contato": "todos",
+      "status": "ativo",
+      "dataCriacao": "2024-06-03T07:02:24.218Z",
+      "ultimoAcesso": "2024-06-03T07:02:24.218Z"
+    },
+    {
+      "id": "7f95",
+      "nome": "Caio Magalhaes",
+      "sobrenome": "Reis",
+      "telefone": "+55 (61) 99608-0883",
+      "email": "caio@gmail.com",
+      "perfilAcesso": [
+        {
+          "label": "Analista",
+          "value": "analista"
+        },
+        {
+          "label": "Supervisor",
+          "value": "supervisor"
+        }
+      ],
+      "idioma": {
+        "label": "Espanhol",
+        "value": "es-Es"
+      },
+      "contato": "todos",
+      "status": "ativo",
+      "dataCriacao": "2024-06-03T07:24:55.598Z",
+      "ultimoAcesso": "2024-06-03T07:24:55.598Z"
     }
   ]
 }

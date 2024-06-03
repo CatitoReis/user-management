@@ -74,6 +74,7 @@
     <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
 
       <!--CAMPO NOME E SOBRENOME-->
+
       <div>
         <div class="nomesForm flex flex-column gap-2">
           <label htmlFor="nome">Nome</label>
@@ -82,6 +83,7 @@
             <small class="text-danger">Nome é obrigatório.</small>
           </div>
         </div>
+
         <div class="nomesForm flex flex-column gap-2 espacoHorizontalInput">
           <label htmlFor="sobrenome">Sobrenome</label>
           <input class="espacoInput tamanhoInput" pInputText id="sobrenome" formControlName="sobrenome" aria-describedby="input sobrenome" />
@@ -92,14 +94,18 @@
       </div>
 
       <!--Telefone E E-MAIL-->
+
       <div>
-        <div class="nomesForm flex flex-column gap-2">
+        <div class="nomesForm">
           <label htmlFor="telefone">Telefone</label>
-          <input class="espacoInput tamanhoInput" pInputText id="telefone" formControlName="telefone" aria-describedby="input telefone" />
+        <div class="espacoInput tamanhoInput">
+            <p-inputMask class="inputTell" mask="+99 (99) 99999-9999"  formControlName="telefone" placeholder="+55 (61) 99999-9999"></p-inputMask>
+          </div>
           <div *ngIf="submitted && userForm.get('telefone')?.errors?.['required']">
             <small class="text-danger">Telefone é obrigatório.</small>
           </div>
         </div>
+
         <div class="nomesForm flex flex-column gap-2 espacoHorizontalInput">
           <label htmlFor="email">E-mail Corporativo</label>
           <input class="espacoInput tamanhoInput" pInputText id="email" formControlName="email" aria-describedby="input email" />
@@ -121,14 +127,15 @@
       </div>
 
       <!--Idioma e Contato-->
+
       <div>
         <div class="nomesForm">
           <label htmlFor="idioma">Idioma</label>
           <p-dropdown
                 formControlName="idioma" class="espacoInput" [options]="opcoesIdioma" optionLabel="label" [showClear]="true" placeholder="Selecione um Idioma">
           </p-dropdown>
-          <div *ngIf="submitted && userForm.get('perfilAcesso')?.errors?.['required']">
-            <small class="text-danger">Perfil de Acesso é obrigatório.</small>
+          <div *ngIf="submitted && userForm.get('idioma')?.errors?.['required']">
+            <small class="text-danger">Idioma é obrigatório.</small>
           </div>
         </div>
 

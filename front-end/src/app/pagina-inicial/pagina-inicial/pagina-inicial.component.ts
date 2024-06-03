@@ -1,5 +1,5 @@
 import { UserService } from './../../services/User.service';
-import { User } from './../../models/User';
+import { BandeiraTelefone, User } from './../../models/User';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Table } from 'primeng/table';
 import { FilterMetadata } from 'primeng/api';
@@ -24,6 +24,7 @@ export class PaginaInicialComponent implements OnInit {
   visible: boolean = false;
   submitted = false;
   conviteSucess: boolean = false;
+  bandeirasTel: BandeiraTelefone[];
 
   @ViewChild('dt') dt: Table | undefined;
 
@@ -45,6 +46,14 @@ export class PaginaInicialComponent implements OnInit {
     this.opcoesPerfilAcess = [
       { label: 'Supervisor', value: 'supervisor' },
       { label: 'Analista', value: 'analista' },
+    ];
+
+    this.bandeirasTel = [
+        { name: 'New York', code: 'NY' },
+        { name: 'Rome', code: 'RM' },
+        { name: 'London', code: 'LDN' },
+        { name: 'Istanbul', code: 'IST' },
+        { name: 'Paris', code: 'PRS' }
     ];
    }
 

@@ -131,12 +131,29 @@ onSubmit(): void {
 }
 
 salvarUsuario() {
-var user: User = this.userForm.value;
-this.montaForm();
-this.userService.saveUsers(user).subscribe(response => {
-  this.buscarUsuarios();
-  this.visible = false
-})}
+  if (this.userForm.valid) {
+    const user: User = {
+      nome: this.userForm.get('nome')?.value || '',
+      sobreNome: this.userForm.get('sobrenome')?.value || '',
+      telefone: this.userForm.get('telefone')?.value || '',
+      email: this.userForm.get('email')?.value || '',
+      perfilAcess: this.userForm.get('perfilAcesso')?.value || [],
+      idioma: this.userForm.get('idioma')?.value || { label: 'Todos', value: null },
+      contatoPref: this.userForm.get('contato')?.value || 'email',
+      status: 'ativo',
+      dataCriacao: new Date(),
+      ultimoAcesso: new Date(),
+      id: 0
+    };
+
+    this.userService.saveUsers(user).subscribe(response => {
+      this.buscarUsuarios();
+      this.visible = false;
+      this.userForm.reset();
+    });
+  }
+}
+
 
 formatDataCriacao(date: string): string | null {
   return this.datePipe.transform(date, 'dd/MM/yyyy');
@@ -151,6 +168,11 @@ formatUltimoAcesso(date: string): string | null {
 
 showDialog() {
   this.visible = true;
+  this.userForm.reset();
+
+  Object.keys(this.userForm.controls).forEach(key => {
+    this.userForm.get(key)?.setErrors(null);
+  });
 }
 
 fecharDialog(): void {

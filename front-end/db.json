@@ -469,6 +469,31 @@
       "status": "ativo",
       "dataCriacao": "2024-06-03T04:23:26.654Z",
       "ultimoAcesso": "2024-06-03T04:23:26.654Z"
+    },
+    {
+      "id": "2394",
+      "nome": "sdasdasd",
+      "sobrenome": "asdasd",
+      "telefone": "asdasd",
+      "email": "sadasd@sdasd",
+      "perfilAcesso": [
+        {
+          "label": "Supervisor",
+          "value": "supervisor"
+        },
+        {
+          "label": "Analista",
+          "value": "analista"
+        }
+      ],
+      "idioma": {
+        "label": "Todos",
+        "value": null
+      },
+      "contato": "email",
+      "status": null,
+      "dataCriacao": null,
+      "ultimoAcesso": null
     }
   ]
 }

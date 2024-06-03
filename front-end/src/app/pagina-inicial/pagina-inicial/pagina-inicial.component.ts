@@ -152,4 +152,18 @@ formatUltimoAcesso(date: string): string | null {
 showDialog() {
   this.visible = true;
 }
+
+fecharDialog(): void {
+  if (this.userForm.dirty) {
+    const confirmacao = confirm('Deseja sair sem Salvar?');
+
+    if (confirmacao) {
+      this.conviteSucess = false;
+      this.userForm.reset();
+      this.visible = false;
+    }
+  } else {
+    this.visible = false;
+  }
+}
 }

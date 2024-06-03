@@ -49,17 +49,24 @@ export class PaginaInicialComponent implements OnInit {
     ];
 
     this.bandeirasTel = [
-        { name: 'New York', code: 'NY' },
-        { name: 'Rome', code: 'RM' },
-        { name: 'London', code: 'LDN' },
-        { name: 'Istanbul', code: 'IST' },
-        { name: 'Paris', code: 'PRS' }
+        { name: 'BRA', code: '55' },
+        { name: 'EUA', code: '69' },
+        { name: 'ESP', code: '61' },
+        { name: 'ARG', code: '98' },
+        { name: 'FRA', code: '56' }
     ];
    }
 
   ngOnInit() {
    this. buscarUsuarios();
    this.montaForm();
+
+
+   this.userForm.get('pais')?.valueChanges.subscribe(() => {
+
+      const paisCode = this.userForm.get('pais')?.value.code;
+      this.userForm.get('telefone')?.setValue(paisCode);
+   })
   }
 
   buscarUsuarios() {
@@ -124,6 +131,7 @@ montaForm(): void{
     status: ['ativo'],
     dataCriacao: [new Date()],
     ultimoAcesso: [new Date()],
+    pais: ['', [Validators.required]]
   });
 }
 
@@ -175,4 +183,9 @@ fecharDialog(): void {
     this.visible = false;
   }
 }
+
+ paisNumber(args: any){
+   console.log(args)
+ }
+
 }

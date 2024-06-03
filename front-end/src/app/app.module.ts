@@ -22,6 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import { InputMaskModule } from 'primeng/inputmask';
 import { ListboxModule } from 'primeng/listbox';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { ListboxModule } from 'primeng/listbox';
     ReactiveFormsModule,
     InputMaskModule,
     ListboxModule,
+    FormsModule,
 
   ],
   providers: [UserService, DatePipe],

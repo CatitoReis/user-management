@@ -97,19 +97,20 @@
       <!--Telefone E E-MAIL-->
 
       <div>
-        <div class="nomesForm">
-          <label htmlFor="telefone">Telefone</label>
-        <div class="espacoInput tamanhoInput">
-            <p-inputMask class="inputTell" mask="+99 (99) 99999-9999"  formControlName="telefone" placeholder="+55 (61) 99999-9999"></p-inputMask>
-          </div>
+        <label htmlFor="telefone">Telefone</label>
+        <div>
+          <p-dropdown formControlName="pais" class="espacoInput" [options]="bandeirasTel" optionLabel="name" [showClear]="true" placeholder="País" appendTo="body">
+          </p-dropdown>
+          <p-inputMask class="inputTell" mask="+99 (99) 99999-9999" [autoClear]="false" formControlName="telefone" placeholder="+55 (61) 99999-9999" value="userForm.telefone"></p-inputMask>
           <div *ngIf="submitted && userForm.get('telefone')?.errors?.['required']">
-            <small class="text-danger">Telefone é obrigatório.</small>
-          </div>
+              <small class="text-danger">Telefone é obrigatório.</small>
+            </div>
         </div>
+
 
         <div class="nomesForm flex flex-column gap-2 espacoHorizontalInput">
           <label htmlFor="email">E-mail Corporativo</label>
-          <input class="espacoInput tamanhoInput" pInputText id="email" formControlName="email" aria-describedby="input email" />
+          <input class="espacoInput tamanhoInput" pInputText id="email" formControlName="email" aria-describedby="input email"/>
           <div *ngIf="submitted && userForm.get('email')?.errors?.['required']">
             <small class="text-danger">E-MAIL é obrigatório.</small>
           </div>
@@ -120,7 +121,7 @@
     <div class="nomesForm card flex flex-column">
       <label htmlFor="perfilAcesso">Perfil de Acesso</label>
       <p-multiSelect
-        formControlName="perfilAcesso" class="espacoInput" [options]="opcoesPerfilAcess" placeholder="Selecione os perfis de Acesso" optionLabel="label" display="chip" [showClear]="true" [virtualScroll]="true" [virtualScrollItemSize]="30">
+        formControlName="perfilAcesso" class="espacoInput" [options]="opcoesPerfilAcess" placeholder="Selecione os perfis de Acesso" optionLabel="label" display="chip" [showClear]="true" [virtualScroll]="true" [virtualScrollItemSize]="30" appendTo="body">
       </p-multiSelect>
       <div *ngIf="submitted && userForm.get('perfilAcesso')?.errors?.['required']">
         <small class="text-danger">Perfil de Acesso é obrigatório.</small>

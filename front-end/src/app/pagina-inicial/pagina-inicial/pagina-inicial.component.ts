@@ -50,10 +50,10 @@ export class PaginaInicialComponent implements OnInit {
 
     this.bandeirasTel = [
         { name: 'BRA', code: '55' },
-        { name: 'EUA', code: '69' },
-        { name: 'ESP', code: '61' },
-        { name: 'ARG', code: '98' },
-        { name: 'FRA', code: '56' }
+        { name: 'EUA', code: '01' },
+        { name: 'ESP', code: '34' },
+        { name: 'ARG', code: '54' },
+        { name: 'FRA', code: '33' }
     ];
    }
 

@@ -201,7 +201,8 @@
 
           <div class="p-col-12 p-md-6">
             <label htmlFor="contato">Contato Preferencial</label>
-            <div>
+            <div style="display: flex; margin-top: 8%;">
+
               <div>
                 <p-radioButton formControlName="contato" name="contato" value="email" inputId="option1"></p-radioButton>
                 <label for="option1" class="ml-2">E-mail</label>
@@ -217,6 +218,7 @@
                 <label for="option3" class="ml-2">Todos</label>
               </div>
             </div>
+
             <div *ngIf="submitted && userForm.get('contato')?.errors?.['required']">
               <small class="text-danger">Contato é obrigatório.</small>
             </div>

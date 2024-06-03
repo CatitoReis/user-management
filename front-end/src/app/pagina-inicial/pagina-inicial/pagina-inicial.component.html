@@ -78,10 +78,16 @@
         <div class="nomesForm flex flex-column gap-2">
           <label htmlFor="nome">Nome</label>
           <input class="espacoInput tamanhoInput" pInputText id="nome" formControlName="nome" aria-describedby="input nome" />
+          <div *ngIf="submitted && userForm.get('nome')?.errors?.['required']">
+            <small class="text-danger">Nome é obrigatório.</small>
+          </div>
         </div>
         <div class="nomesForm flex flex-column gap-2 espacoHorizontalInput">
           <label htmlFor="sobrenome">Sobrenome</label>
           <input class="espacoInput tamanhoInput" pInputText id="sobrenome" formControlName="sobrenome" aria-describedby="input sobrenome" />
+          <div *ngIf="submitted && userForm.get('sobrenome')?.errors?.['required']">
+            <small class="text-danger">Sobrenome é obrigatório.</small>
+          </div>
         </div>
       </div>
 
@@ -90,10 +96,16 @@
         <div class="nomesForm flex flex-column gap-2">
           <label htmlFor="telefone">Telefone</label>
           <input class="espacoInput tamanhoInput" pInputText id="telefone" formControlName="telefone" aria-describedby="input telefone" />
+          <div *ngIf="submitted && userForm.get('telefone')?.errors?.['required']">
+            <small class="text-danger">Telefone é obrigatório.</small>
+          </div>
         </div>
         <div class="nomesForm flex flex-column gap-2 espacoHorizontalInput">
           <label htmlFor="email">E-mail Corporativo</label>
           <input class="espacoInput tamanhoInput" pInputText id="email" formControlName="email" aria-describedby="input email" />
+          <div *ngIf="submitted && userForm.get('email')?.errors?.['required']">
+            <small class="text-danger">E-MAIL é obrigatório.</small>
+          </div>
         </div>
       </div>
 
@@ -101,7 +113,11 @@
       <div class="nomesForm card flex justify-content-center">
         <label htmlFor="perfilAcesso">Perfil de Acesso</label>
         <p-multiSelect
-               formControlName="perfilAcesso" class="espacoInput" [options]="opcoesPerfilAcess" placeholder="Selecione os perfis de Acesso" optionLabel="label" display="chip" [showClear]="true" [virtualScroll]="true" [virtualScrollItemSize]="30"></p-multiSelect>
+          formControlName="perfilAcesso" class="espacoInput" [options]="opcoesPerfilAcess" placeholder="Selecione os perfis de Acesso" optionLabel="label" display="chip" [showClear]="true" [virtualScroll]="true" [virtualScrollItemSize]="30">
+        </p-multiSelect>
+        <div *ngIf="submitted && userForm.get('perfilAcesso')?.errors?.['required']">
+          <small class="text-danger">Perfil de Acesso é obrigatório.</small>
+        </div>
       </div>
 
       <!--Idioma e Contato-->
@@ -109,7 +125,11 @@
         <div class="nomesForm">
           <label htmlFor="idioma">Idioma</label>
           <p-dropdown
-                formControlName="idioma" class="espacoInput" [options]="opcoesIdioma" optionLabel="label" [showClear]="true" placeholder="Selecione um Idioma"></p-dropdown>
+                formControlName="idioma" class="espacoInput" [options]="opcoesIdioma" optionLabel="label" [showClear]="true" placeholder="Selecione um Idioma">
+          </p-dropdown>
+          <div *ngIf="submitted && userForm.get('perfilAcesso')?.errors?.['required']">
+            <small class="text-danger">Perfil de Acesso é obrigatório.</small>
+          </div>
         </div>
 
         <div class="nomesForm" style="margin-left: 26.5%;">
@@ -129,6 +149,9 @@
               <p-radioButton formControlName="contato" name="contato" value="todos" inputId="option3"></p-radioButton>
               <label for="option3" class="ml-2">Todos</label>
             </div>
+          </div>
+          <div *ngIf="submitted && userForm.get('contato')?.errors?.['required']">
+            <small class="text-danger">Contato é obrigatório.</small>
           </div>
         </div>
       </div>

@@ -22,6 +22,7 @@ export class PaginaInicialComponent implements OnInit {
   opcoesPerfilAcess: any[];
   userForm!: FormGroup;
   visible: boolean = false;
+  submitted = false;
 
   @ViewChild('dt') dt: Table | undefined;
 
@@ -103,7 +104,7 @@ getFilterValue(filter: FilterMetadata | FilterMetadata[]): string {
 
 montaForm(): void{
   this.userForm = this.fb.group({
-    nome: ['', [Validators.required ]],
+    nome: ['', [Validators.required]],
     sobrenome: ['', [Validators.required]],
     telefone: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.email]],
@@ -117,6 +118,7 @@ montaForm(): void{
 }
 
 onSubmit(): void {
+  this.submitted = true;
   if (this.userForm.valid) {
     console.log(this.userForm.value);
     this.salvarUsuario();

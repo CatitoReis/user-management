@@ -231,6 +231,148 @@
       "status": "ativo",
       "dataCriacao": "2024-06-02T07:36:18.356Z",
       "ultimoAcesso": "2024-06-02T07:36:18.356Z"
+    },
+    {
+      "id": "5091",
+      "nome": "Gi",
+      "sobrenome": "Barbosa",
+      "telefone": "6956456465",
+      "email": "gi@hoymail",
+      "perfilAcesso": [
+        {
+          "label": "Supervisor",
+          "value": "supervisor"
+        },
+        {
+          "label": "Analista",
+          "value": "analista"
+        }
+      ],
+      "idioma": {
+        "label": "Todos",
+        "value": null
+      },
+      "contato": "todos",
+      "status": "ativo",
+      "dataCriacao": "2024-06-02T22:33:04.536Z",
+      "ultimoAcesso": "2024-06-02T22:33:04.536Z"
+    },
+    {
+      "id": "85d1",
+      "nome": "asdasdas",
+      "sobrenome": "sadasdasd",
+      "telefone": "asdasdasd",
+      "email": "asdasdasd@sdd",
+      "perfilAcesso": [
+        {
+          "label": "Supervisor",
+          "value": "supervisor"
+        },
+        {
+          "label": "Analista",
+          "value": "analista"
+        }
+      ],
+      "idioma": {
+        "label": "Todos",
+        "value": null
+      },
+      "contato": "Telefone",
+      "status": "ativo",
+      "dataCriacao": "2024-06-03T01:40:46.500Z",
+      "ultimoAcesso": "2024-06-03T01:40:46.500Z"
+    },
+    {
+      "id": "341a",
+      "nome": "sadasdasd",
+      "sobrenome": "sadasd",
+      "telefone": "546464",
+      "email": "zxczxczxc@fef",
+      "perfilAcesso": [
+        {
+          "label": "Supervisor",
+          "value": "supervisor"
+        }
+      ],
+      "idioma": {
+        "label": "Todos",
+        "value": null
+      },
+      "contato": "telefone",
+      "status": "ativo",
+      "dataCriacao": "2024-06-03T01:44:50.270Z",
+      "ultimoAcesso": "2024-06-03T01:44:50.270Z"
+    },
+    {
+      "id": "b7a7",
+      "nome": "Caio",
+      "sobrenome": "Reis",
+      "telefone": "65464564",
+      "email": "dsdf@sdfsd",
+      "perfilAcesso": [
+        {
+          "label": "Supervisor",
+          "value": "supervisor"
+        }
+      ],
+      "idioma": {
+        "label": "Espanhol",
+        "value": "es-Es"
+      },
+      "contato": "Telefone",
+      "status": "ativo",
+      "dataCriacao": "2024-06-03T01:50:39.507Z",
+      "ultimoAcesso": "2024-06-03T01:50:39.507Z"
+    },
+    {
+      "id": "b892",
+      "nome": "asdasd",
+      "sobrenome": "asdasd",
+      "telefone": "asdasd",
+      "email": "sdaasd@hot",
+      "perfilAcesso": [
+        {
+          "label": "Supervisor",
+          "value": "supervisor"
+        },
+        {
+          "label": "Analista",
+          "value": "analista"
+        }
+      ],
+      "idioma": {
+        "label": "Todos",
+        "value": null
+      },
+      "contato": "todos",
+      "status": "ativo",
+      "dataCriacao": "2024-06-03T03:38:53.194Z",
+      "ultimoAcesso": "2024-06-03T03:38:53.194Z"
+    },
+    {
+      "id": "4b7a",
+      "nome": "Victor",
+      "sobrenome": "Soares",
+      "telefone": "5564564564564",
+      "email": "victor@email",
+      "perfilAcesso": [
+        {
+          "label": "Supervisor",
+          "value": "supervisor"
+        },
+        {
+          "label": "Analista",
+          "value": "analista"
+        }
+      ],
+      "idioma": {
+        "label": "Todos",
+        "value": null
+      },
+      "contato": "todos",
+      "status": "ativo",
+      "dataCriacao": "2024-06-03T04:12:07.705Z",
+      "ultimoAcesso": "2024-06-03T04:12:07.705Z"
     }
   ]
 }

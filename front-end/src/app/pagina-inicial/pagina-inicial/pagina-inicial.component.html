@@ -83,8 +83,9 @@
         <!-- CAMPO NOME E SOBRENOME -->
         <div style="display: flex; justify-content: space-between; margin-top: 3%;">
           <div class="p-col-12 p-md-6">
-            <label htmlFor="nome">Nome</label>
-
+            <div style="margin-bottom: 3%;">
+              <label htmlFor="nome">Nome</label>
+            </div>
               <input
                 class="inputForm"
                 pInputText
@@ -97,7 +98,9 @@
           </div>
 
           <div class="p-col-12 p-md-6">
-            <label htmlFor="sobrenome">Sobrenome</label>
+            <div style="margin-bottom: 3%;">
+              <label htmlFor="sobrenome">Sobrenome</label>
+            </div>
             <input
               class="inputForm"
               pInputText
@@ -113,7 +116,9 @@
         <!-- Telefone E E-MAIL -->
         <div style="display: flex; justify-content: space-between; margin-top: 3%;">
           <div class="p-col-6 p-md-6">
-            <label htmlFor="telefone">Telefone</label>
+            <div style="margin-bottom: 3%;">
+              <label htmlFor="telefone">Telefone</label>
+            </div>
             <div style="display: flex;">
               <p-dropdown
               formControlName="pais"
@@ -137,7 +142,9 @@
           </div>
 
           <div class="p-col-6 p-md-6">
-            <label htmlFor="email">E-mail Corporativo</label>
+            <div style="margin-bottom: 3%;">
+              <label htmlFor="email">E-mail Corporativo</label>
+            </div>
             <input
               class="inputForm"
               pInputText id="email"
@@ -152,19 +159,22 @@
         <!-- Perfil De Acesso -->
         <div style="justify-content: space-between; margin-top: 3%;">
         <div class="p-col-12">
-          <label htmlFor="perfilAcesso">Perfil de Acesso</label>
-          <p-multiSelect
-            formControlName="perfilAcesso"
-            class="espacoInput"
-            [options]="opcoesPerfilAcess"
-            placeholder="Selecione os perfis de Acesso"
-            optionLabel="label" display="chip"
-            [showClear]="true" [virtualScroll]="true"
-            [virtualScrollItemSize]="30"
-            appendTo="body">
-          </p-multiSelect>
-          <div *ngIf="submitted && userForm.get('perfilAcesso')?.errors?.['required']">
-            <small class="text-danger">Perfil de Acesso é obrigatório.</small>
+          <div style="margin-bottom: 3%;">
+            <label htmlFor="perfilAcesso">Perfil de Acesso</label>
+            <div style="margin-top: 1%;">
+              <p-multiSelect
+                formControlName="perfilAcesso"
+                [options]="opcoesPerfilAcess"
+                placeholder="Selecione os perfis de Acesso"
+                optionLabel="label" display="chip"
+                [showClear]="true" [virtualScroll]="true"
+                [virtualScrollItemSize]="30"
+                appendTo="body">
+              </p-multiSelect>
+            </div>
+            <div *ngIf="submitted && userForm.get('perfilAcesso')?.errors?.['required']">
+              <small class="text-danger">Perfil de Acesso é obrigatório.</small>
+            </div>
           </div>
         </div>
         </div>
@@ -172,7 +182,9 @@
         <!-- Idioma e Contato -->
         <div style="display: flex; justify-content: space-between; margin-top: 3%;">
           <div class="p-col-12 p-md-6">
-            <label htmlFor="idioma">Idioma</label>
+            <div style="margin-bottom: 3%;">
+              <label htmlFor="idioma">Idioma</label>
+            </div>
             <p-dropdown
             formControlName="idioma"
              [options]="opcoesIdioma"

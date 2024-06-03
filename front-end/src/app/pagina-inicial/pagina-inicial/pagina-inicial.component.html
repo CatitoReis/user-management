@@ -119,7 +119,7 @@
       <div class="nomesForm card flex justify-content-center">
         <label htmlFor="perfilAcesso">Perfil de Acesso</label>
         <p-multiSelect
-          formControlName="perfilAcesso" class="espacoInput" [options]="opcoesPerfilAcess" placeholder="Selecione os perfis de Acesso" optionLabel="label" display="chip" [showClear]="true" [virtualScroll]="true" [virtualScrollItemSize]="30">
+          formControlName="perfilAcesso" class="espacoInput" [options]="opcoesPerfilAcess" placeholder="Selecione os perfis de Acesso" optionLabel="label" display="chip" [showClear]="true" [virtualScroll]="true" [virtualScrollItemSize]="30" appendTo="body">
         </p-multiSelect>
         <div *ngIf="submitted && userForm.get('perfilAcesso')?.errors?.['required']">
           <small class="text-danger">Perfil de Acesso é obrigatório.</small>
@@ -132,7 +132,7 @@
         <div class="nomesForm">
           <label htmlFor="idioma">Idioma</label>
           <p-dropdown
-                formControlName="idioma" class="espacoInput" [options]="opcoesIdioma" optionLabel="label" [showClear]="true" placeholder="Selecione um Idioma">
+                formControlName="idioma" class="espacoInput" [options]="opcoesIdioma" optionLabel="label" [showClear]="true" placeholder="Selecione um Idioma" appendTo="body">
           </p-dropdown>
           <div *ngIf="submitted && userForm.get('idioma')?.errors?.['required']">
             <small class="text-danger">Idioma é obrigatório.</small>

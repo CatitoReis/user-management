@@ -81,10 +81,16 @@
       <div class="p-grid p-fluid">
 
         <!-- CAMPO NOME E SOBRENOME -->
-        <div style="display: flex; justify-content: space-between;">
+        <div style="display: flex; justify-content: space-between; margin-top: 3%;">
           <div class="p-col-12 p-md-6">
             <label htmlFor="nome">Nome</label>
-            <input pInputText id="nome" formControlName="nome" aria-describedby="input nome" />
+
+              <input
+                class="inputForm"
+                pInputText
+                id="nome"
+                formControlName="nome"
+                aria-describedby="input nome" />
             <div *ngIf="submitted && userForm.get('nome')?.errors?.['required']">
               <small class="text-danger">Nome é obrigatório.</small>
             </div>
@@ -92,7 +98,12 @@
 
           <div class="p-col-12 p-md-6">
             <label htmlFor="sobrenome">Sobrenome</label>
-            <input pInputText id="sobrenome" formControlName="sobrenome" aria-describedby="input sobrenome" />
+            <input
+              class="inputForm"
+              pInputText
+              id="sobrenome"
+              formControlName="sobrenome"
+              aria-describedby="input sobrenome" />
             <div *ngIf="submitted && userForm.get('sobrenome')?.errors?.['required']">
               <small class="text-danger">Sobrenome é obrigatório.</small>
             </div>
@@ -100,7 +111,7 @@
         </div>
 
         <!-- Telefone E E-MAIL -->
-        <div style="display: flex; justify-content: space-between;">
+        <div style="display: flex; justify-content: space-between; margin-top: 3%;">
           <div class="p-col-6 p-md-6">
             <label htmlFor="telefone">Telefone</label>
             <div style="display: flex;">
@@ -109,7 +120,7 @@
               [options]="bandeirasTel"
                optionLabel="name"
                [showClear]="true"
-               placeholder="País"
+               placeholder="Cod"
                appendTo="body">
               </p-dropdown>
               <p-inputMask
@@ -127,7 +138,11 @@
 
           <div class="p-col-6 p-md-6">
             <label htmlFor="email">E-mail Corporativo</label>
-            <input  pInputText id="email" formControlName="email" aria-describedby="input email" />
+            <input
+              class="inputForm"
+              pInputText id="email"
+              formControlName="email"
+              aria-describedby="input email" />
             <div *ngIf="submitted && userForm.get('email')?.errors?.['required']">
               <small class="text-danger">E-MAIL é obrigatório.</small>
             </div>
@@ -135,6 +150,7 @@
         </div>
 
         <!-- Perfil De Acesso -->
+        <div style="justify-content: space-between; margin-top: 3%;">
         <div class="p-col-12">
           <label htmlFor="perfilAcesso">Perfil de Acesso</label>
           <p-multiSelect
@@ -151,9 +167,10 @@
             <small class="text-danger">Perfil de Acesso é obrigatório.</small>
           </div>
         </div>
+        </div>
 
         <!-- Idioma e Contato -->
-        <div style="display: flex; justify-content: space-between;">
+        <div style="display: flex; justify-content: space-between; margin-top: 3%;">
           <div class="p-col-12 p-md-6">
             <label htmlFor="idioma">Idioma</label>
             <p-dropdown

@@ -23,6 +23,7 @@ export class PaginaInicialComponent implements OnInit {
   userForm!: FormGroup;
   visible: boolean = false;
   submitted = false;
+  conviteSucess: boolean = false;
 
   @ViewChild('dt') dt: Table | undefined;
 
@@ -119,9 +120,11 @@ montaForm(): void{
 
 onSubmit(): void {
   this.submitted = true;
+
   if (this.userForm.valid) {
     console.log(this.userForm.value);
     this.salvarUsuario();
+    this.conviteSucess = true;
   } else {
     console.log('Formulário inválido');
   }

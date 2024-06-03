@@ -373,6 +373,102 @@
       "status": "ativo",
       "dataCriacao": "2024-06-03T04:12:07.705Z",
       "ultimoAcesso": "2024-06-03T04:12:07.705Z"
+    },
+    {
+      "id": "833b",
+      "nome": "victor",
+      "sobrenome": "sakdasd",
+      "telefone": "5464",
+      "email": "caio@reis",
+      "perfilAcesso": [
+        {
+          "label": "Supervisor",
+          "value": "supervisor"
+        }
+      ],
+      "idioma": {
+        "label": "Todos",
+        "value": null
+      },
+      "contato": "todos",
+      "status": "ativo",
+      "dataCriacao": "2024-06-03T04:19:40.324Z",
+      "ultimoAcesso": "2024-06-03T04:19:40.324Z"
+    },
+    {
+      "id": "0de2",
+      "nome": "asdasd",
+      "sobrenome": "sdaasd",
+      "telefone": "sadasd",
+      "email": "sadasd@sasd",
+      "perfilAcesso": [
+        {
+          "label": "Supervisor",
+          "value": "supervisor"
+        },
+        {
+          "label": "Analista",
+          "value": "analista"
+        }
+      ],
+      "idioma": {
+        "label": "Todos",
+        "value": null
+      },
+      "contato": "todos",
+      "status": "ativo",
+      "dataCriacao": "2024-06-03T04:21:45.091Z",
+      "ultimoAcesso": "2024-06-03T04:21:45.091Z"
+    },
+    {
+      "id": "f5af",
+      "nome": "asdasd",
+      "sobrenome": "sdasd",
+      "telefone": "sadasd",
+      "email": "sadas@sdasd",
+      "perfilAcesso": [
+        {
+          "label": "Supervisor",
+          "value": "supervisor"
+        },
+        {
+          "label": "Analista",
+          "value": "analista"
+        }
+      ],
+      "idioma": {
+        "label": "Todos",
+        "value": null
+      },
+      "contato": "email",
+      "status": "ativo",
+      "dataCriacao": "2024-06-03T04:22:28.299Z",
+      "ultimoAcesso": "2024-06-03T04:22:28.299Z"
+    },
+    {
+      "id": "abc2",
+      "nome": "asdasd",
+      "sobrenome": "sadasd",
+      "telefone": "sdasd",
+      "email": "sadas@sadasd",
+      "perfilAcesso": [
+        {
+          "label": "Supervisor",
+          "value": "supervisor"
+        },
+        {
+          "label": "Analista",
+          "value": "analista"
+        }
+      ],
+      "idioma": {
+        "label": "Todos",
+        "value": null
+      },
+      "contato": "todos",
+      "status": "ativo",
+      "dataCriacao": "2024-06-03T04:23:26.654Z",
+      "ultimoAcesso": "2024-06-03T04:23:26.654Z"
     }
   ]
 }

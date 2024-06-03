@@ -20,6 +20,8 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
+import { InputMaskModule } from 'primeng/inputmask';
+
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { DatePipe } from '@angular/common';
     RadioButtonModule,
     MultiSelectModule,
     ReactiveFormsModule,
+    InputMaskModule,
+
   ],
   providers: [UserService, DatePipe],
   bootstrap: [AppComponent]

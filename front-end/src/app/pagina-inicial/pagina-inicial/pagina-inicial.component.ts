@@ -128,7 +128,7 @@ montaForm(): void{
     perfilAcesso: ['', [Validators.required]],
     idioma: ['', [Validators.required]],
     contato: ['', [Validators.required]],
-    status: ['pendente'],
+    status: ['ativo'],
     dataCriacao: [new Date()],
     ultimoAcesso: [new Date()],
     pais: ['', [Validators.required]]

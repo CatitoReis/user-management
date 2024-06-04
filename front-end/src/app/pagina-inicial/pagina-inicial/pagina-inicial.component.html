@@ -1,7 +1,7 @@
 <div class="backgroundPrincipal">
-  <h3 style="font-weight: bold;">Usuários</h3>
-
+  <div>
   <!-- BARRA DE PESQUISA, FILTRAR e Botao de Criar Usuário -->
+
   <div class="flex mb-4" style="margin-left: 19.9%;">
     <span class="p-input-icon-right ml-auto">
       <i class="pi pi-search" style="margin-right: -29%;"></i>
@@ -73,8 +73,9 @@
       </p-table>
     </div>
   </div>
+</div>
 
-  <p-dialog header="Header" [(visible)]="visible" [style]="{ width: '50vw' }">
+  <p-dialog header="Header" [(visible)]="visible" [style]="{ width: '50vw' }" [closable]="false">
     <ng-template pTemplate="header">
       <div>
         <span><strong>Adicionar Usuário</strong></span>

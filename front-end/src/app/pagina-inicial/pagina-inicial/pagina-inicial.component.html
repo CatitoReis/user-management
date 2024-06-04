@@ -50,7 +50,8 @@
         </ng-template>
         <ng-template pTemplate="body" let-usuario>
           <tr>
-            <td>{{ usuario.nome }}
+          <td>
+            <strong>{{ usuario.nome }} {{ usuario.sobrenome }}</strong>
               <div>
                 {{ usuario.email }}
               </div>

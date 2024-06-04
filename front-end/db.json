@@ -243,6 +243,64 @@
         "name": "BRA",
         "code": "55"
       }
+    },
+    {
+      "id": "031c",
+      "nome": "Caio",
+      "sobrenome": "Reis",
+      "telefone": "+55 (61) 99999-999_",
+      "email": "caio@reis",
+      "perfilAcesso": [
+        {
+          "label": "Supervisor",
+          "value": "supervisor"
+        },
+        {
+          "label": "Analista",
+          "value": "analista"
+        }
+      ],
+      "idioma": {
+        "label": "Todos",
+        "value": null
+      },
+      "contato": "todos",
+      "status": "ativo",
+      "dataCriacao": "2024-06-04T00:18:42.074Z",
+      "ultimoAcesso": "2024-06-04T00:18:42.074Z",
+      "pais": {
+        "name": "BRA",
+        "code": "55"
+      }
+    },
+    {
+      "id": "2a02",
+      "nome": "Paula",
+      "sobrenome": "Reis",
+      "telefone": "+55 (61) 99608-0883",
+      "email": "caioi@reis",
+      "perfilAcesso": [
+        {
+          "label": "Supervisor",
+          "value": "supervisor"
+        },
+        {
+          "label": "Analista",
+          "value": "analista"
+        }
+      ],
+      "idioma": {
+        "label": "Todos",
+        "value": null
+      },
+      "contato": "todos",
+      "status": "ativo",
+      "dataCriacao": "2024-06-04T00:22:23.969Z",
+      "ultimoAcesso": "2024-06-04T00:22:23.969Z",
+      "pais": {
+        "name": "BRA",
+        "code": "55"
+      }
     }
   ]
 }

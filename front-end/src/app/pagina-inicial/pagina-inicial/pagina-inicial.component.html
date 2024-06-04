@@ -146,11 +146,15 @@
             <div style="margin-bottom: 3%;">
               <label htmlFor="email">E-mail Corporativo</label>
             </div>
-            <input
-              class="inputForm"
-              pInputText id="email"
-              formControlName="email"
-              aria-describedby="input email" />
+            <span class="p-input-icon-left">
+              <i class="pi pi-envelope"></i>
+              <input
+                class="pi-envelope inputForm"
+                pInputText
+                id="email"
+                formControlName="email"
+                aria-describedby="input email" />
+            </span>
             <div *ngIf="submitted && userForm.get('email')?.errors?.['required']">
               <small class="text-danger">E-MAIL é obrigatório.</small>
             </div>

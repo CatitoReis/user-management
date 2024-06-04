@@ -125,28 +125,28 @@
             <div style="margin-bottom: 3%;">
               <label htmlFor="telefone">Telefone</label>
             </div>
-            <div style="display: flex;">
+            <div style="display: flex; align-items: center; width: 100%;">
               <p-dropdown
                 formControlName="pais"
                 [options]="bandeirasTel"
                 optionLabel="name"
-                [showClear]="true"
-                placeholder="Cod"
-                appendTo="body">
+                [showClear]="false"
+                appendTo="body"
+                placeholder="DDDI">
                 <ng-template let-item pTemplate="selectedItem">
-                  <img [src]="item.flagImagePath" alt="{{ item.name }}" style="width: 20px; height: 20px;">
+                  <img *ngIf="item" [src]="item.flagImagePath" alt="{{ item.name }}" style="width: 20px; height: 20px;">
                 </ng-template>
                 <ng-template let-item pTemplate="item">
                   <img [src]="item.flagImagePath" alt="{{ item.name }}" style="width: 20px; height: 20px;">
                 </ng-template>
               </p-dropdown>
               <p-inputMask
-              mask="+99 (99) 99999-9999"
-              [autoClear]="false"
-              formControlName="telefone"
-              placeholder="+55 (61) 99999-9999"
-              value="userForm.telefone">
-            </p-inputMask>
+                mask="+99 (99) 99999-9999"
+                [autoClear]="false"
+                formControlName="telefone"
+                placeholder="+55 (61) 99999-9999"
+                class="input-telefone">
+              </p-inputMask>
             </div>
               <div *ngIf="submitted && userForm.get('telefone')?.errors?.['required']">
                 <small class="text-danger">Telefone é obrigatório.</small>

@@ -83,6 +83,19 @@
   color: red;
 }
 
+.dropdown-flag .p-dropdown {
+  width: 60px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.input-telefone .p-inputmask {
+  width: 100%;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: -2px;
+}
+
 .success-message {
   position: fixed;
   top: 50%;

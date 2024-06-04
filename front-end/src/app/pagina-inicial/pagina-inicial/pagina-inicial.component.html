@@ -127,12 +127,18 @@
             </div>
             <div style="display: flex;">
               <p-dropdown
-              formControlName="pais"
-              [options]="bandeirasTel"
-               optionLabel="name"
-               [showClear]="true"
-               placeholder="Cod"
-               appendTo="body">
+                formControlName="pais"
+                [options]="bandeirasTel"
+                optionLabel="name"
+                [showClear]="true"
+                placeholder="Cod"
+                appendTo="body">
+                <ng-template let-item pTemplate="selectedItem">
+                  <img [src]="item.flagImagePath" alt="{{ item.name }}" style="width: 20px; height: 20px;">
+                </ng-template>
+                <ng-template let-item pTemplate="item">
+                  <img [src]="item.flagImagePath" alt="{{ item.name }}" style="width: 20px; height: 20px;">
+                </ng-template>
               </p-dropdown>
               <p-inputMask
               mask="+99 (99) 99999-9999"

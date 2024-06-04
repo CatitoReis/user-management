@@ -14,4 +14,5 @@ export interface User {
 export interface BandeiraTelefone{
   name: string;
   code: string;
+  flagImagePath: string;
 }

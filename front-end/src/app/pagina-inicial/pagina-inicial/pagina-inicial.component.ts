@@ -49,11 +49,11 @@ export class PaginaInicialComponent implements OnInit {
     ];
 
     this.bandeirasTel = [
-        { name: 'BRA', code: '55' },
-        { name: 'EUA', code: '01' },
-        { name: 'ESP', code: '34' },
-        { name: 'ARG', code: '54' },
-        { name: 'FRA', code: '33' }
+        { name: 'BRA', code: '55', flagImagePath: '../../../assets/brasil-icon.png' },
+        { name: 'EUA', code: '01', flagImagePath: '../../../assets/eua-icon.png' },
+        { name: 'ESP', code: '34', flagImagePath: '../../../assets/espanha-icon.png' },
+        { name: 'ARG', code: '54', flagImagePath: '../../../assets/arg-icon.png' },
+        { name: 'FRA', code: '33', flagImagePath: '../../../assets/fran-icon.png' }
     ];
    }
 

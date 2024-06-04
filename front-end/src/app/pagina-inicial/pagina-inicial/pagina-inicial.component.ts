@@ -6,7 +6,6 @@ import { FilterMetadata } from 'primeng/api';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 
-
 @Component({
   selector: 'app-pagina-inicial',
   templateUrl: './pagina-inicial.component.html',
@@ -49,149 +48,146 @@ export class PaginaInicialComponent implements OnInit {
     ];
 
     this.bandeirasTel = [
-        { name: 'BRA', code: '55', flagImagePath: '../../../assets/brasil-icon.png' },
-        { name: 'EUA', code: '01', flagImagePath: '../../../assets/eua-icon.png' },
-        { name: 'ESP', code: '34', flagImagePath: '../../../assets/espanha-icon.png' },
-        { name: 'ARG', code: '54', flagImagePath: '../../../assets/arg-icon.png' },
-        { name: 'FRA', code: '33', flagImagePath: '../../../assets/fran-icon.png' }
+      { name: 'BRA', code: '55', flagImagePath: '../../../assets/brasil-icon.png' },
+      { name: 'EUA', code: '01', flagImagePath: '../../../assets/eua-icon.png' },
+      { name: 'ESP', code: '34', flagImagePath: '../../../assets/espanha-icon.png' },
+      { name: 'ARG', code: '54', flagImagePath: '../../../assets/arg-icon.png' },
+      { name: 'FRA', code: '33', flagImagePath: '../../../assets/fran-icon.png' }
     ];
-   }
+  }
 
   ngOnInit() {
-   this. buscarUsuarios();
-   this.montaForm();
+    this.buscarUsuarios();
+    this.montaForm();
 
-
-   this.userForm.get('pais')?.valueChanges.subscribe(() => {
-
-      const paisCode = this.userForm.get('pais')?.value.code;
+    this.userForm.get('pais')?.valueChanges.subscribe(() => {
+      const paisCode = this.userForm.get('pais')?.value?.code || '';
       this.userForm.get('telefone')?.setValue(paisCode);
-   })
+    });
   }
 
   buscarUsuarios() {
     this.usuarios = [];
-    this.userService.getUsers().subscribe(Object => {this.usuarios = Object
-    })
+    this.userService.getUsers().subscribe(users => {
+      this.usuarios = users;
+    });
   }
 
   next() {
     this.first = this.first + this.rows;
-}
-
+  }
 
   prev() {
     this.first = this.first - this.rows;
-}
-
+  }
 
   reset() {
-      this.first = 0;
+    this.first = 0;
   }
-
 
   pageChange(event: any) {
-      this.first = event.first;
-      this.rows = event.rows;
+    this.first = event.first;
+    this.rows = event.rows;
   }
-
 
   isLastPage(): boolean {
-      return this.usuarios ? this.first === this.usuarios.length - this.rows : true;
+    return this.usuarios ? this.first === this.usuarios.length - this.rows : true;
   }
-
 
   isFirstPage(): boolean {
-      return this.usuarios ? this.first === 0 : true;
+    return this.usuarios ? this.first === 0 : true;
   }
-
 
   clear(table: Table) {
     table.clear();
-}
-
-
-getFilterValue(filter: FilterMetadata | FilterMetadata[]): string {
-  if (Array.isArray(filter)) {
-    return filter.length > 0 ? filter[0].value : '';
-  } else {
-    return filter ? filter.value : '';
   }
-}
 
-montaForm(): void{
-  this.userForm = this.fb.group({
-    nome: ['', [Validators.required]],
-    sobrenome: ['', [Validators.required]],
-    telefone: ['', [Validators.required]],
-    email: ['', [Validators.required, Validators.email]],
-    perfilAcesso: ['', [Validators.required]],
-    idioma: ['', [Validators.required]],
-    contato: ['', [Validators.required]],
-    status: ['ativo'],
-    dataCriacao: [new Date()],
-    ultimoAcesso: [new Date()],
-    pais: ['', [Validators.required]]
-  });
-}
+  getFilterValue(filter: FilterMetadata | FilterMetadata[]): string {
+    if (Array.isArray(filter)) {
+      return filter.length > 0 ? filter[0].value : '';
+    } else {
+      return filter ? filter.value : '';
+    }
+  }
 
-onSubmit(): void {
-  this.submitted = true;
+  montaForm(): void {
+    this.userForm = this.fb.group({
+      nome: ['', [Validators.required]],
+      sobrenome: ['', [Validators.required]],
+      telefone: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      perfilAcesso: [[], [Validators.required]],
+      idioma: ['', [Validators.required]],
+      contato: ['', [Validators.required]],
+      status: ['ativo'],
+      dataCriacao: [new Date()],
+      ultimoAcesso: [new Date()],
+      pais: [null, [Validators.required]]
+    });
+  }
 
-  if (this.userForm.valid) {
-    console.log(this.userForm.value);
-    this.salvarUsuario();
-    this.conviteSucess = true;
-  this.submitted = false;
-
-  } else {
+  onSubmit(): void {
     this.submitted = true;
+
+    if (this.userForm.valid) {
+      const user = { ...this.userForm.value, dataCriacao: new Date(), ultimoAcesso: new Date(), status: 'ativo' };
+      this.userService.saveUsers(user).subscribe(response => {
+        this.buscarUsuarios();
+        this.visible = false;
+        this.resetForm();
+        this.conviteSucess = true;
+      });
+    } else {
+      this.submitted = true;
+    }
   }
-}
 
-salvarUsuario() {
-  var user: User = this.userForm.value;
-  this.montaForm();
-  this.userService.saveUsers(user).subscribe(response => {
-    this.buscarUsuarios();
-    this.visible = false
-})}
+  resetForm() {
+    this.userForm.reset({
+      nome: '',
+      sobrenome: '',
+      telefone: '',
+      email: '',
+      perfilAcesso: [],
+      idioma: '',
+      contato: '',
+      status: 'ativo',
+      dataCriacao: new Date(),
+      ultimoAcesso: new Date(),
+      pais: null
+    });
+    this.submitted = false;
+    this.conviteSucess = false;
+  }
 
-formatDataCriacao(date: string): string | null {
-  return this.datePipe.transform(date, 'dd/MM/yyyy');
-}
+  formatDataCriacao(date: string): string | null {
+    return this.datePipe.transform(date, 'dd/MM/yyyy');
+  }
 
-formatUltimoAcesso(date: string): string | null {
-  const formattedDate = this.datePipe.transform(date, 'dd/MM/yyyy') ?? '';
-  const formattedTime = this.datePipe.transform(date, 'HH:mm') ?? '';
-  return `${formattedDate} às ${formattedTime}h`;
-}
+  formatUltimoAcesso(date: string): string | null {
+    const formattedDate = this.datePipe.transform(date, 'dd/MM/yyyy') ?? '';
+    const formattedTime = this.datePipe.transform(date, 'HH:mm') ?? '';
+    return `${formattedDate} às ${formattedTime}h`;
+  }
 
+  showDialog() {
+    this.resetForm();
+    this.visible = true;
+  }
 
-showDialog() {
-  this.visible = true;
-}
-
-fecharDialog(): void {
-  if (this.userForm.dirty) {
-    const confirmacao = confirm('Deseja sair sem Salvar?');
-
-    if (confirmacao) {
-      this.conviteSucess = false;
-      this.userForm.reset();
+  fecharDialog(): void {
+    if (this.userForm.dirty) {
+      const confirmacao = confirm('Deseja sair sem Salvar?');
+      if (confirmacao) {
+        this.userForm.reset();
+        this.visible = false;
+        this.submitted = false;
+        this.conviteSucess = false;
+      }
+    } else {
       this.visible = false;
       this.submitted = false;
-
     }
-  } else {
-    this.visible = false;
-    this.submitted = false;
-
   }
-}
-
- paisNumber(args: any){
-   console.log(args)
- }
 
 }

@@ -51,6 +51,64 @@
       "status": "ativo",
       "dataCriacao": "2020-03-22T12:00:00Z",
       "ultimoAcesso": "2024-04-10T09:25:00Z"
+    },
+    {
+      "id": "7d26",
+      "nome": "Caio",
+      "sobrenome": "Reis",
+      "telefone": "+55 (61) 99608-0883",
+      "email": "caiomreis@hotmail.com",
+      "perfilAcesso": [
+        {
+          "label": "Supervisor",
+          "value": "supervisor"
+        },
+        {
+          "label": "Analista",
+          "value": "analista"
+        }
+      ],
+      "idioma": {
+        "label": "Todos",
+        "value": null
+      },
+      "contato": "todos",
+      "status": "pendente",
+      "dataCriacao": "2024-06-04T02:08:22.674Z",
+      "ultimoAcesso": "2024-06-04T02:08:22.674Z",
+      "pais": {
+        "name": "BRA",
+        "code": "55"
+      }
+    },
+    {
+      "id": "24c0",
+      "nome": "Jhon",
+      "sobrenome": "Silva",
+      "telefone": "+01 (61) 99608-0883",
+      "email": "jhon@hotmail.com",
+      "perfilAcesso": [
+        {
+          "label": "Supervisor",
+          "value": "supervisor"
+        },
+        {
+          "label": "Analista",
+          "value": "analista"
+        }
+      ],
+      "idioma": {
+        "label": "Português",
+        "value": "pt-BR"
+      },
+      "contato": "todos",
+      "status": "pendente",
+      "dataCriacao": "2024-06-04T02:09:37.573Z",
+      "ultimoAcesso": "2024-06-04T02:09:37.573Z",
+      "pais": {
+        "name": "EUA",
+        "code": "01"
+      }
     }
   ]
 }

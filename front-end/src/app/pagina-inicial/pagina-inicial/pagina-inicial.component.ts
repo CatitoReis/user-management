@@ -142,8 +142,10 @@ onSubmit(): void {
     console.log(this.userForm.value);
     this.salvarUsuario();
     this.conviteSucess = true;
+  this.submitted = false;
+
   } else {
-    console.log('Formulário inválido');
+    this.submitted = true;
   }
 }
 
@@ -178,9 +180,13 @@ fecharDialog(): void {
       this.conviteSucess = false;
       this.userForm.reset();
       this.visible = false;
+      this.submitted = false;
+
     }
   } else {
     this.visible = false;
+    this.submitted = false;
+
   }
 }
 

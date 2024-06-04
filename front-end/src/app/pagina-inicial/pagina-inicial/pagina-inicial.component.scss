@@ -61,7 +61,7 @@
 }
 
 .status-ativo {
-  background-color: rgba(0, 128, 0, 0.4); /* Verde com 40% de opacidade */
+  background-color: rgba(0, 128, 0, 0.4);
   color: rgb(30, 97, 3);
 }
 
@@ -70,12 +70,12 @@
 }
 
 .status-pendente {
-  background-color: rgba(241, 219, 21, 0.4); /* Amarelo com 40% de opacidade */
+  background-color: rgba(241, 219, 21, 0.4);
   color: rgb(177, 180, 12);
 }
 
 .status-bloqueado {
-  background-color: rgba(255, 0, 0, 0.4); /* Vermelho com 40% de opacidade */
+  background-color: rgba(255, 0, 0, 0.4);
   color: rgb(206, 40, 40);
 }
 
@@ -98,7 +98,7 @@
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
-  animation: fadeOut 7s ease forwards;
+  animation: fadeOut 15s ease forwards;
 }
 
 @keyframes fadeOut {

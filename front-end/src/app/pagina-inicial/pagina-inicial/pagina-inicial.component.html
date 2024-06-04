@@ -108,11 +108,11 @@
               id="sobrenome"
               formControlName="sobrenome"
               aria-describedby="input sobrenome" />
-            <div *ngIf="submitted && userForm.get('sobrenome')?.errors?.['required']">
-              <small class="text-danger">Sobrenome é obrigatório.</small>
+              <div *ngIf="submitted && userForm.get('sobrenome')?.errors?.['required']">
+                <small class="text-danger">Sobrenome é obrigatório.</small>
+              </div>
             </div>
           </div>
-        </div>
 
         <!-- Telefone E E-MAIL -->
         <div style="display: flex; justify-content: space-between; margin-top: 3%;">
@@ -233,8 +233,14 @@
     </form>
 
     <ng-template pTemplate="footer">
-      <p-button (click)="onSubmit()" label="Enviar Convite"></p-button>
-      <p-button (click)="fecharDialog()" label="Fechar"></p-button>
+      <div style="display: flex; justify-content: space-between;">
+        <div>
+          <p-button (click)="fecharDialog()" label="Fechar"></p-button>
+        </div>
+        <div>
+          <p-button (click)="onSubmit()" label="Enviar Convite"></p-button>
+        </div>
+      </div>
     </ng-template>
   </p-dialog>
 
